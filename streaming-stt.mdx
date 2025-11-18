@@ -1,9 +1,6 @@
 ---
-description: "Real-time speech-to-text using Waves' low-latency WebSocket ASR API"
 title: "Waves Streaming STT"
 ---
-
-# **Waves Streaming STT**
 
 Convert live audio into text using Waves’ low-latency ASR WebSocket API. Streaming STT lets you send audio in real time and receive partial and final transcripts as they are generated.
 
@@ -13,19 +10,19 @@ Convert live audio into text using Waves’ low-latency ASR WebSocket API. Strea
 
 The ASR service is accessed via a WebSocket connection, which is established once and remains open for the duration of the audio stream.
 
-- **URL: **`wss://waves-api.smallest.ai/api/v1/asr`  
+- **URL**: `wss://waves-api.smallest.ai/api/v1/asr`
 - **Method: WebSocket**
 
 ## **Required Headers / Auth**
 
-Authentication and audio configuration are passed as **query string parameters **when establishing the WebSocket connection.
+Authentication and audio configuration are passed as \*\*query string parameters \*\*when establishing the WebSocket connection.
 
-| **Parameter**       | **Type** | **Description**                                               |
-| ------------------- | -------- | ------------------------------------------------------------- |
-| ` api_key `         | String   | Your API key obtained from the Waves platform.                |
-| ` audioLanguage `   | String   | The language code for the audio (e.g., `hi`, `en`)            |
-| ` audioEncoding `   | String   | The audio format (e.g., `linear16` - **Recommended)**         |
-| ` audioSampleRate ` | String   | The sample rate of the audio (e.g., `1600` - **Recommended)** |
+| **Parameter**     | **Type** | **Description**                                               |
+| ----------------- | -------- | ------------------------------------------------------------- |
+| `api_key`         | String   | Your API key obtained from the Waves platform.                |
+| `audioLanguage`   | String   | The language code for the audio (e.g., `hi`, `en`)            |
+| `audioEncoding`   | String   | The audio format (e.g., `linear16` - **Recommended)**         |
+| `audioSampleRate` | String   | The sample rate of the audio (e.g., `1600` - **Recommended)** |
 
 ## **Sample Request**
 
@@ -93,4 +90,4 @@ The API returns JSON objects for transcription update. Transcriptions will strea
 
 ## **Usage Tip**
 
-For best latency, send audio in **100-300ms binary chunks **(e.g., 3200-9600 bytes at 16 kHz). Smaller chunks reduce dlay and produce faster partial transcripts. Using `linear16` at 16 kHz is the recommended configuration for real-time speech recognition.
+For best latency, send audio in \*\*100-300ms binary chunks \*\*(e.g., 3200-9600 bytes at 16 kHz). Smaller chunks reduce dlay and produce faster partial transcripts. Using `linear16` at 16 kHz is the recommended configuration for real-time speech recognition.
