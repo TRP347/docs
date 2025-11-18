@@ -1,0 +1,22 @@
+---
+description: "Real-time speech-to-text using Waves' low-latency WebSocket ASR API"
+title: "Waves Streaming STT"
+---
+
+# **Waves Streaming STT**
+
+Convert live audio into text using Waves’ low-latency ASR WebSocket API. Streaming STT lets you send audio in real time and receive partial and final transcripts as they are generated.
+
+## **Endpoint**
+
+**WebSocket URL:**
+
+The ASR service is accessed via a WebSocket connection, which is established once and remains open for the duration of the audio stream.
+
+- **URL: **`wss://waves-api.smallest.ai/api/v1/asr`  
+- **Method: **
+- **WebSocket**
+
+## **Required Connection Parameters**
+
+Authentication and audio configuration are passed as **query string parameters** when establishing the WebSocket connection.
