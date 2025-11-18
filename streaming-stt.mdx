@@ -46,8 +46,12 @@ async def stream_audio():
 
         # Send audio in small chunks
         with open("audio.wav", "rb") as f:
-            while chunk := f.read(3200):     # ~100ms at 16kHz
+            while chunk := f.read(3200):      # ~100ms at 16kHz
                 await ws.send(chunk)
+                # Adding a small sleep to simulate real-time processing
+                await asyncio.sleep(0.1) 
+
+        await ws.send(b'') # Signal the end of the audio stream
 
         # Receive transcription events
         try:
